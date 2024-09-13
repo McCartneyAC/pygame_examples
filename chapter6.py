@@ -179,35 +179,21 @@ for row in range(0,n):
 
 
 
-
 print("***problem 3***")
 n = input("how big is your box?\n")
 n = int(n)
 n = 2*n -1
-
-print("here is your result:")
 for row in range(1,n+1,2):
     for column in range(row, n+1,2):
         print(column, end = " ")
-    if row == 1:
-        print("", end = "")
-    else: 
-        print(" "*(2*row-3), end = "")
-    if row != 1:
-        print(" ", end = "")
+    print(" "*(2*row-2), end = "")
     for column in range(n, row-1, -2):
         print(column, end = " ")
     print()
 for row in range(n, 0, -2):
     for column in range(row, n+2, 2):
         print(column, end = " ")
-    if row == 1: 
-        print("", end = "")
-    else: 
-        print(" "*(2*row-3), end = "")
-    if row != 1:
-        print(" ", end = "")
+    print(" "*(2*row-2), end = "")
     for column in range(n,row-1,-2): 
         print(column, end = " ")
     print()
-
