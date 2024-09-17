@@ -33,42 +33,37 @@ I could not see to see --
 import random
 
 animal = input("Name an Animal:    ")
-lowercase = []
-for i in range(len(animal)):
-    animal = animal.lower()
-    lowercase.append(animal[i])
-uppercase = []
-for i in range(len(animal)): 
-    animal = animal.upper()
-    uppercase.append(animal[i])
-    
-an1 = random.shuffle(lowercase)
-an2 = random.shuffle(uppercase)
-#an3 = random.shuffle(spongebobcase)
-
+lowercase = animal.lower()
+lowercase = list(lowercase)
+random.shuffle(lowercase)
+s = "-"
+lowercase = s.join(lowercase)
+uppercase = animal.upper()
+uppercase = list(uppercase)
+random.shuffle(uppercase)
+uppercase = ' '.join(uppercase)
 # convert to spongebob case: 
-for letter in animal: 
-    an3 = []
-    if letter.index() % 2 == 0: # first bug here.
-        an3.append(letter.upper())
-    else: an3.append(letter.lower())
-print(an3)
-print("\t\t\t\t\t\t\t\tr-p-o-p-h-e-s-s-a-g-r")
+spongebob = list(animal) 
+random.shuffle(spongebob) 
+for i in range(len(spongebob)):
+    if i % 2 == 0:  
+        spongebob[i] = spongebob[i].upper()
+    else:  
+        spongebob[i] = spongebob[i].lower()
+spongebob = ' '.join(spongebob)
+
+print("\t\t\t\t\t\t\t\t"+lowercase)
 print("\t\t\t\t\t\twho")
 print("   a)s w(e loo)k")
 print("  upnowgath")
-print("\t\t\t\t\t\tPPEGORHRASS")
+print("\t\t\t\t\t\t"+uppercase)
 print("\t\t\t\t\t\t\t\t\t\t\t\t\t\teringint(o-")
 print("  aThe):l")
 print("\t\t\t\teA")
 print("\t\t\t\t\t!p:")
 print("S                                                                        a")
 print("\t\t\t\t\t\t\t\t\t(r")
-print("  rIvInG                              .gRrEaPsPhOs)")
+print("  rIvInG                              ."+spongebob+")")
 print("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tto")
 print("  rea(be)rran(com)gi(e)ngly")
 print("  ,"+animal+";")
-
-
-
-
