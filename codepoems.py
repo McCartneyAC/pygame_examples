@@ -30,7 +30,22 @@ Between the light -- and me --
 And then the Windows failed -- and then
 I could not see to see --
 '''
+
 import random
+def spongebobtext(animal):
+    # takes an input string and shuffles it, returning the shuffled letters in SpOnGeBoB cAsE
+    spongebob = list(animal) 
+    random.shuffle(spongebob) 
+    for i in range(len(spongebob)):
+        if i % 2 == 0:  
+            spongebob[i] = spongebob[i].upper()
+        else:  
+            spongebob[i] = spongebob[i].lower()
+    spongebob = ' '.join(spongebob)
+    return(spongebob)
+
+
+
 
 animal = input("Name an Animal:    ")
 lowercase = animal.lower()
@@ -43,14 +58,7 @@ uppercase = list(uppercase)
 random.shuffle(uppercase)
 uppercase = ' '.join(uppercase)
 # convert to spongebob case: 
-spongebob = list(animal) 
-random.shuffle(spongebob) 
-for i in range(len(spongebob)):
-    if i % 2 == 0:  
-        spongebob[i] = spongebob[i].upper()
-    else:  
-        spongebob[i] = spongebob[i].lower()
-spongebob = ' '.join(spongebob)
+sponge = spongebobtext(animal)
 
 print("\t\t\t\t\t\t\t\t"+lowercase)
 print("\t\t\t\t\t\twho")
@@ -63,7 +71,11 @@ print("\t\t\t\teA")
 print("\t\t\t\t\t!p:")
 print("S                                                                        a")
 print("\t\t\t\t\t\t\t\t\t(r")
-print("  rIvInG                              ."+spongebob+")")
+print("  rIvInG                              ."+sponge+")")
 print("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tto")
 print("  rea(be)rran(com)gi(e)ngly")
-print("  ,"+animal+";")
+print("  ,"+animal.lower()+";")
+
+
+
+
