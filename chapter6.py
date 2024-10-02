@@ -174,7 +174,7 @@ for row in range(0, n-2):
   print("o")
 for row in range(0,n):
   print("o", end="")
-
+print()
 
 
 
