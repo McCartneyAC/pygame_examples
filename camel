@@ -1,0 +1,137 @@
+import random
+print("🐫Welcome to Camel🐫")
+print("🐫You have stolen a camel to make your way across the great mobi desert🏜")
+print("🏇The natives want their camel back and are chasing you down survive your desert trek and out run the native🧭")    
+done = False # step 2: complete.
+km_traveled = 0
+thirst = 0 
+camel_tiredness = 0 
+natives_distance = -20
+drinks = 4
+# cool fancy way:
+while not done: 
+    print("A. Drink from your canteen🫗")   
+    print("B. Ahead moderate speed⏩")
+    print("C. Ahead full speed⏩⏩")
+    print("D. stop for the night⛺")
+    print("E. Status check📋")
+    print("Q. Quit❌")
+    print()
+    choice = input("Thief: what to do next\n")
+    print()
+    if choice.upper()== "Q":
+        print ("❌you quit the game")
+        done = True
+    elif choice.upper() == "E":
+        print("📋Status Update:")
+        print("⏩Km traveled:",km_traveled)
+        print("🫗Drinks left in canteen:",drinks)
+        print("🏇The natives are", km_traveled - natives_distance, "km behind you")
+        print()
+########################################
+#              STEP 12                 #
+########################################
+    elif choice.upper() == "D": #step 12
+        print("⛺You Stop for the Night")
+        camel_tiredness = 0
+        print("🐫The Camel is happy")
+        natives_distance += random.randrange(7,15)
+        print()
+########################################
+#              STEP 13                 #
+########################################        
+    elif choice.upper() == "C":
+        new_distance = random.randrange(10,21)
+        km_traveled += new_distance
+        print("🧭You traveled", new_distance, "kilometers⏩")
+        thirst += 1
+        camel_tiredness += random.randrange(1,4)
+        natives_distance += random.randrange(7,15)
+        chance = random.randrange(1,21)
+        if chance == 6:
+            print("You have found an oasis. You relax and resupply.")
+            drinks = 4
+            thirst = 0
+            camel_tiredness = 0
+            natives_distance +=1 
+#########################################
+#                step 14                #
+#########################################
+    elif choice.upper() == "B":
+        new_distance = random.randrange(5,13)
+        km_traveled += new_distance
+        print("🧭You traveled", new_distance, "kilometers⏩")
+        thirst += 1
+        camel_tiredness += 1
+        natives_distance += random.randrange(7,15)
+        chance = random.randrange(1,21)
+        if chance == 6:
+            print("You have found an oasis. You relax and resupply.")
+            drinks = 4
+            thirst = 0
+            camel_tiredness = 0
+            natives_distance +=1 
+    elif choice.upper() == "F":
+        print("🔥You Barbecue the Camel")
+        print("🤯It's delicious")
+        print("👮The Natives Catch you")
+        print("🥘You offer them a plate")
+        print("🫂You enjoy a good meal together with warm friendship👳")
+        print("👻They Kill you anyway")
+        print("❌Game over")
+        done = True
+#########################################
+#                step 15                #       exhaustion
+#########################################
+    elif choice.upper() == "A":
+        if drinks > 0:
+            print("🫗 it quenches your thirst.🥛")
+            print()
+            drinks += -1 
+            thirst = 0 
+        else: 
+            print("Your Canteen is as dry as the desert. 🏜")
+            print()
+##########steps 16 and 17 ###################################
+    if thirst > 6:
+        print("💀You have died of thirst🥛")
+        print("💀game over💀")
+        done = True
+    elif thirst > 4:
+        print("🚱You are thirsty🚱")
+    
+######## steps 18 and 19 ########################################
+    if camel_tiredness > 8: 
+        print("🐫Your camel has died of exhaustion💀")
+        print("❌Game Over")
+        done = True
+    elif camel_tiredness > 5: 
+        print("🐫 Your Camel is getting Tired 💤")
+        
+######### steps 20 and 21 ########################################    
+    if km_traveled - natives_distance < 1: 
+        print("👮🕵️🧕The natives have caught you⚡️.")
+        print("☠️Game over☠️")
+        done = True
+    elif km_traveled - natives_distance < 16: 
+        print("🏇The Natives are getting close!")
+####### step 22: win condition: ##################################
+    if km_traveled > 199:
+        print("✨You win! You Escape!💖")
+        print("🏅Victory🎆")
+        done = True
+########## step 23: oasis #######################################
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+    
+ 
