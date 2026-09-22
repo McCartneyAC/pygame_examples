@@ -129,24 +129,24 @@ print(" ")
 
 
 
-# problem 12
-for row in range(1, 10):
-  for column in range(10,row, -1):
-    print(" ", end = " ")
-  for column in range(0,row):
-    print(column+ 1, end = " ")
-  for column in range(row-1, 0, -1):
-     print(column, end = " ")
-  print()
-for row in range(9, 1, -1):
-  print("    ", end = "")
-  for column in range(row, 9, 1):
-    print(" ", end = " ")
-  for column in range(1, row):
-    print(column, end = " ")
-  for column in range(row-2, 0, -1):
-    print(column, end = " ")
-  print()
+
+print("this is puzzle 12")
+for row in range(10):
+    for column in range(10,row, -1):
+        print(" ", end = " ")
+    for column in range(1,row+1):
+        print(column, end = " ")
+    for column in range(row-1, 0, -1):
+        print(column,end = " " )
+    print()
+for row in range(9):
+    for column in range(row+2):
+        print(" ", end=" ")
+    for column in range(1,9 - row):
+        print(column, end=" ")
+    for column in range(7-row,0,-1):
+        print(column, end= " ")
+    print()
 
 
 
